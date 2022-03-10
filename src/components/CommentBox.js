@@ -1,9 +1,18 @@
-const CommentBox = () => {
-  return (
-    <div className="commentBox">
-      Hello, world! I am a CommentBox.
-    </div>
-  );
+import React from 'react'
+
+class commentBox extends React.Component {
+  render(){
+    return (
+      <form>
+        <h4>Add a comment</h4>
+        <textarea />
+        <div>
+        <button>Submit comment</button>
+        </div>
+       
+      </form>
+    )
+  }
 }
 
-export default CommentBox;
+export default commentBox
