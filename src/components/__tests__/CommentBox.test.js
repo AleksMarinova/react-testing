@@ -24,9 +24,15 @@ it('users can enter input into text area', () => {
   });
   wrapped.update();
   //retreive prop values
-  expect(wrapped.state.comment).toEqual('new comment');
+  expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
 })
 
 it ('text area clears on submit', () => {
-
+  wrapped.find('textarea').simulate('change', {
+    target: { value: 'new comment' }
+  });
+  wrapped.update();
+  wrapped.find('form').simulate('submit');
+  wrapped.update();
+  expect(wrapped.find('textarea').prop('value')).toEqual('');
 })
